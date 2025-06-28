@@ -65,9 +65,13 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center space-x-8">
           <button
             onClick={onLogoClick}
-            className="text-red-600 text-2xl font-bold hover:text-red-500 transition-colors"
+            className="hover:opacity-80 transition-opacity"
           >
-            PROJECT
+            <img 
+              src="/src/assets/ChatGPT Image 26 giu 2025, 11_48_17.png" 
+              alt="Skà Logo" 
+              className="h-8 w-auto"
+            />
           </button>
           <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item, index) => (
