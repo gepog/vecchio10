@@ -147,7 +147,7 @@ function App() {
   // Also include custom movies from content rows that are in myList
   const customMoviesInMyList: Movie[] = [];
   updatedContentRows.forEach(row => {
-    row.movies.forEach(movie => {
+    (Array.isArray(row.movies) ? row.movies : []).forEach(movie => {
       if (myList.includes(movie.id) && !movies.find(m => m.id === movie.id)) {
         customMoviesInMyList.push(movie);
       }
