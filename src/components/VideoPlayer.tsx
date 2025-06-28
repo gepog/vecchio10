@@ -180,5 +180,6 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ movie, onClose }) => {
         </div>
       </div>
     </div>
+  )
   );
 };
