@@ -240,7 +240,7 @@ export const contentRows: ContentRow[] = [
   {
     id: 'most-liked',
     title: 'Most Popular',
-    movies: getMostLikedMovies(),
+    movies: getMostLikedMovies(movies),
   },
   {
     id: 'trending',
@@ -554,6 +554,4 @@ export const contentRows: ContentRow[] = [
       },
     ],
   },
-  {
-  }
-]
+];
