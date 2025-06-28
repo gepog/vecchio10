@@ -106,37 +106,30 @@ export const MovieModal: React.FC<MovieModalProps> = ({
         </div>
 
         <div className="p-6">
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-4 text-white/90 mb-4">
-                <span className="px-2 py-1 bg-red-600 text-xs font-semibold rounded">
-                  {movie.rating}
-                </span>
-                <span>{movie.year}</span>
-                <span>{movie.duration}</span>
-                <div className="flex items-center space-x-2">
-                  <Heart size={16} className="text-red-500" fill="currentColor" />
-                  <span className="text-sm font-medium">{currentLikes.toLocaleString()}</span>
-                </div>
+          <div className="space-y-6">
+            <div className="flex items-center space-x-4 text-white/90 mb-4">
+              <div className="flex items-center space-x-2">
+                <Heart size={16} className="text-red-500" fill="currentColor" />
+                <span className="text-sm font-medium">{currentLikes.toLocaleString()}</span>
               </div>
+            </div>
 
-              <p className="text-white/90 text-lg leading-relaxed mb-6">
-                {movie.description}
-              </p>
+            <p className="text-white/90 text-lg leading-relaxed mb-6">
+              {movie.description}
+            </p>
 
-              <div className="flex items-center space-x-4">
-                <button 
-                  onClick={() => onLike(movie)}
-                  className={`flex items-center space-x-2 transition-colors ${
-                    isLiked 
-                      ? 'text-green-500' 
-                      : 'text-white hover:text-green-500'
-                  }`}
-                >
-                  <ThumbsUp size={20} />
-                  <span className="text-sm">{isLiked ? 'Unlike' : 'Like'}</span>
-                </button>
-              </div>
+            <div className="flex items-center space-x-4">
+              <button 
+                onClick={() => onLike(movie)}
+                className={`flex items-center space-x-2 transition-colors ${
+                  isLiked 
+                    ? 'text-green-500' 
+                    : 'text-white hover:text-green-500'
+                }`}
+              >
+                <ThumbsUp size={20} />
+                <span className="text-sm">{isLiked ? 'Unlike' : 'Like'}</span>
+              </button>
             </div>
           </div>
         </div>
