@@ -552,13 +552,3 @@ export const contentRows: ContentRow[] = [
     ],
   },
   {
-    id: 'crime',
-    title: 'Crime & Mystery',
-    movies: (() => {
-      const crimeMovies = movies.filter(movie => movie.genre.includes('Crime') || movie.genre.includes('Mystery'));
-    }
-    )
-  }
-];
-
-export const featuredMovie = movies.find(movie => movie.isFeatured) || movies[0];
