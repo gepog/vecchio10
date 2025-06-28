@@ -144,14 +144,14 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                         className={`p-2 rounded-full transition-all duration-200 group/button ${
                           isMyListRow 
                             ? 'bg-[#ddb870]/80 text-[#081932] hover:bg-[#ddb870]' 
-                            : myList.includes(movie.id)
+                            : isInMyList
                               ? 'bg-[#0f2f5f]/80 text-white hover:bg-[#ddb870] hover:text-[#081932]'
                               : 'bg-[#0f2f5f]/80 text-white hover:bg-[#ebdcb5] hover:text-[#081932]'
                         }`}
                       >
                         {isMyListRow ? (
                           <X size={16} />
-                        ) : myList.includes(movie.id) ? (
+                        ) : isInMyList ? (
                           <>
                             <Plus size={16} className="group-hover/button:hidden" />
                             <X size={16} className="hidden group-hover/button:block" />
