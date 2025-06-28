@@ -59,14 +59,6 @@ export const MovieModal: React.FC<MovieModalProps> = ({
             
             <div className="flex flex-col sm:flex-row gap-3">
               <button
-                onClick={() => onPlay(movie)}
-                className="flex items-center justify-center space-x-3 bg-white text-black px-6 py-3 rounded-md hover:bg-white/90 transition-colors font-semibold"
-              >
-                <Play size={20} fill="currentColor" />
-                <span>Play</span>
-              </button>
-
-              <button
                 onClick={() => onAddToList(movie)}
                 className={`flex items-center justify-center space-x-3 px-6 py-3 rounded-md font-semibold backdrop-blur-sm transition-all duration-200 group/button ${
                   isInMyList 

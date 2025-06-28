@@ -130,15 +130,6 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          onPlay(movie);
-                        }}
-                        className="bg-white text-black p-2 rounded-full hover:bg-white/90 transition-colors"
-                      >
-                        <Play size={16} fill="currentColor" />
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
                           onAddToList(movie);
                         }}
                         className={`p-2 rounded-full transition-all duration-200 group/button ${
