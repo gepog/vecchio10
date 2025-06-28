@@ -39,7 +39,7 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
       <div className="bg-[#0f2f5f] rounded-lg max-w-md w-full">
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
           <h2 className="text-white text-xl font-bold">
-            {showSwitchAccount ? 'Cambia Account' : 'Esci dall\'Account'}
+            {showSwitchAccount ? 'Switch Account' : 'Sign Out'}
           </h2>
           <button
             onClick={onClose}
@@ -65,7 +65,7 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
 
               <div className="text-center">
                 <p className="text-white/80 mb-6">
-                  Sei sicuro di voler uscire dal tuo account?
+                  Are you sure you want to sign out of your account?
                 </p>
 
                 <div className="space-y-3">
@@ -74,21 +74,21 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
                     className="w-full bg-[#0f2f5f] hover:bg-[#081932] text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
                   >
                     <ArrowRight size={20} />
-                    <span>Cambia Account</span>
+                    <span>Switch Account</span>
                   </button>
 
                   <button
                     onClick={onConfirmLogout}
                     className="w-full bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] py-3 px-4 rounded-lg transition-colors"
                   >
-                    Esci
+                    Sign Out
                   </button>
 
                   <button
                     onClick={onClose}
                     className="w-full bg-transparent border border-gray-600 hover:border-[#ddb870] text-white py-3 px-4 rounded-lg transition-colors"
                   >
-                    Annulla
+                    Cancel
                   </button>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
             <div className="space-y-6">
               {/* Saved Accounts */}
               <div>
-                <h3 className="text-white font-semibold mb-4">Account Salvati</h3>
+                <h3 className="text-white font-semibold mb-4">Saved Accounts</h3>
                 <div className="space-y-2">
                   {savedAccounts.map((account) => (
                     <button
@@ -122,7 +122,7 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
 
               {/* Login Form */}
               <div>
-                <h3 className="text-white font-semibold mb-4">Accedi con un altro account</h3>
+                <h3 className="text-white font-semibold mb-4">Sign in with another account</h3>
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60" size={20} />
@@ -150,7 +150,7 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
                     type="submit"
                     className="w-full bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] py-3 px-4 rounded-lg transition-colors"
                   >
-                    Accedi
+                    Sign In
                   </button>
                 </form>
               </div>
@@ -160,7 +160,7 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
                   onClick={() => setShowSwitchAccount(false)}
                   className="text-white/60 hover:text-white text-sm transition-colors"
                 >
-                  ← Torna indietro
+                  ← Go back
                 </button>
               </div>
             </div>

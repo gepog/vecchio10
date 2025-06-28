@@ -42,7 +42,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({
               className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-[#0f2f5f]/50 rounded transition-colors"
             >
               <Settings size={16} />
-              <span className="text-sm">Impostazioni</span>
+              <span className="text-sm">Settings</span>
             </button>
             <button 
               onClick={(e) => {
@@ -53,7 +53,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({
               className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-[#0f2f5f]/50 rounded transition-colors"
             >
               <HelpCircle size={16} />
-              <span className="text-sm">Centro Assistenza</span>
+              <span className="text-sm">Help Center</span>
             </button>
           </div>
 
@@ -67,7 +67,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({
               className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-[#0f2f5f]/50 rounded transition-colors"
             >
               <LogOut size={16} />
-              <span className="text-sm">Esci</span>
+              <span className="text-sm">Sign Out</span>
             </button>
           </div>
         </div>

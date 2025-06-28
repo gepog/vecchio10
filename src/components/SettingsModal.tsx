@@ -13,18 +13,18 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
 
   const tabs = [
     { id: 'account', label: 'Account', icon: User },
-    { id: 'notifications', label: 'Notifiche', icon: Bell },
+    { id: 'notifications', label: 'Notifications', icon: Bell },
     { id: 'privacy', label: 'Privacy', icon: Shield },
-    { id: 'language', label: 'Lingua', icon: Globe },
-    { id: 'appearance', label: 'Aspetto', icon: Palette },
-    { id: 'playback', label: 'Riproduzione', icon: Monitor },
+    { id: 'language', label: 'Language', icon: Globe },
+    { id: 'appearance', label: 'Appearance', icon: Palette },
+    { id: 'playback', label: 'Playback', icon: Monitor },
   ];
 
   return (
     <div className="fixed inset-0 bg-[#081932]/80 z-50 flex items-center justify-center p-4">
       <div className="bg-[#0f2f5f] rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
-          <h2 className="text-white text-2xl font-bold">Impostazioni</h2>
+          <h2 className="text-white text-2xl font-bold">Settings</h2>
           <button
             onClick={onClose}
             className="text-white hover:text-gray-300 transition-colors p-2"
@@ -61,11 +61,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
           <div className="flex-1 p-6 overflow-y-auto">
             {activeTab === 'account' && (
               <div className="space-y-6">
-                <h3 className="text-white text-xl font-semibold">Informazioni Account</h3>
+                <h3 className="text-white text-xl font-semibold">Account Information</h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-white/80 text-sm font-medium mb-2">
-                      Nome
+                      Name
                     </label>
                     <input
                       type="text"
@@ -88,7 +88,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                       Password
                     </label>
                     <button className="bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] px-4 py-2 rounded-lg transition-colors">
-                      Cambia Password
+                      Change Password
                     </button>
                   </div>
                 </div>
@@ -97,13 +97,13 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
 
             {activeTab === 'notifications' && (
               <div className="space-y-6">
-                <h3 className="text-white text-xl font-semibold">Preferenze Notifiche</h3>
+                <h3 className="text-white text-xl font-semibold">Notification Preferences</h3>
                 <div className="space-y-4">
                   {[
-                    { label: 'Nuovi episodi', desc: 'Ricevi notifiche per nuovi episodi delle tue serie' },
-                    { label: 'Raccomandazioni', desc: 'Suggerimenti personalizzati basati sui tuoi gusti' },
-                    { label: 'Promemoria', desc: 'Ricorda dove hai interrotto la visione' },
-                    { label: 'Email marketing', desc: 'Offerte speciali e aggiornamenti via email' },
+                    { label: 'New episodes', desc: 'Get notifications for new episodes of your series' },
+                    { label: 'Recommendations', desc: 'Personalized suggestions based on your preferences' },
+                    { label: 'Reminders', desc: 'Remember where you left off watching' },
+                    { label: 'Email marketing', desc: 'Special offers and updates via email' },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center justify-between p-4 bg-[#081932] rounded-lg">
                       <div>
@@ -122,24 +122,24 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
 
             {activeTab === 'privacy' && (
               <div className="space-y-6">
-                <h3 className="text-white text-xl font-semibold">Privacy e Sicurezza</h3>
+                <h3 className="text-white text-xl font-semibold">Privacy & Security</h3>
                 <div className="space-y-4">
                   <div className="p-4 bg-[#081932] rounded-lg">
-                    <h4 className="text-white font-medium mb-2">Cronologia di visione</h4>
+                    <h4 className="text-white font-medium mb-2">Viewing history</h4>
                     <p className="text-white/60 text-sm mb-3">
-                      Gestisci la tua cronologia di visione e i dati di utilizzo
+                      Manage your viewing history and usage data
                     </p>
                     <button className="bg-[#0f2f5f] hover:bg-[#081932] text-white px-4 py-2 rounded-lg transition-colors">
-                      Cancella Cronologia
+                      Clear History
                     </button>
                   </div>
                   <div className="p-4 bg-[#081932] rounded-lg">
-                    <h4 className="text-white font-medium mb-2">Download dei tuoi dati</h4>
+                    <h4 className="text-white font-medium mb-2">Download your data</h4>
                     <p className="text-white/60 text-sm mb-3">
-                      Scarica una copia dei tuoi dati personali
+                      Download a copy of your personal data
                     </p>
                     <button className="bg-[#0f2f5f] hover:bg-[#081932] text-white px-4 py-2 rounded-lg transition-colors">
-                      Richiedi Download
+                      Request Download
                     </button>
                   </div>
                 </div>
@@ -148,15 +148,15 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
 
             {activeTab === 'language' && (
               <div className="space-y-6">
-                <h3 className="text-white text-xl font-semibold">Lingua e Regione</h3>
+                <h3 className="text-white text-xl font-semibold">Language & Region</h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-white/80 text-sm font-medium mb-2">
-                      Lingua dell'interfaccia
+                      Interface language
                     </label>
                     <select className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]">
-                      <option>Italiano</option>
                       <option>English</option>
+                      <option>Italiano</option>
                       <option>Español</option>
                       <option>Français</option>
                       <option>Deutsch</option>
@@ -164,14 +164,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                   </div>
                   <div>
                     <label className="block text-white/80 text-sm font-medium mb-2">
-                      Regione
+                      Region
                     </label>
                     <select className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]">
-                      <option>Italia</option>
-                      <option>Stati Uniti</option>
-                      <option>Regno Unito</option>
-                      <option>Germania</option>
-                      <option>Francia</option>
+                      <option>United States</option>
+                      <option>United Kingdom</option>
+                      <option>Italy</option>
+                      <option>Germany</option>
+                      <option>France</option>
                     </select>
                   </div>
                 </div>
@@ -180,18 +180,18 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
 
             {activeTab === 'appearance' && (
               <div className="space-y-6">
-                <h3 className="text-white text-xl font-semibold">Aspetto</h3>
+                <h3 className="text-white text-xl font-semibold">Appearance</h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-white/80 text-sm font-medium mb-2">
-                      Tema
+                      Theme
                     </label>
                     <div className="grid grid-cols-3 gap-3">
-                      {['Scuro', 'Chiaro', 'Auto'].map((theme) => (
+                      {['Dark', 'Light', 'Auto'].map((theme) => (
                         <button
                           key={theme}
                           className={`p-3 rounded-lg border-2 transition-colors ${
-                            theme === 'Scuro'
+                            theme === 'Dark'
                               ? 'border-[#ddb870] bg-[#081932]'
                               : 'border-gray-600 bg-[#081932] hover:border-gray-500'
                           }`}
@@ -207,11 +207,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
 
             {activeTab === 'playback' && (
               <div className="space-y-6">
-                <h3 className="text-white text-xl font-semibold">Impostazioni Riproduzione</h3>
+                <h3 className="text-white text-xl font-semibold">Playback Settings</h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-white/80 text-sm font-medium mb-2">
-                      Qualità video
+                      Video quality
                     </label>
                     <select className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]">
                       <option>Auto</option>
@@ -223,8 +223,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                   </div>
                   <div className="flex items-center justify-between p-4 bg-[#081932] rounded-lg">
                     <div>
-                      <h4 className="text-white font-medium">Riproduzione automatica</h4>
-                      <p className="text-white/60 text-sm">Avvia automaticamente il prossimo episodio</p>
+                      <h4 className="text-white font-medium">Autoplay</h4>
+                      <p className="text-white/60 text-sm">Automatically start the next episode</p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
@@ -242,10 +242,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
             onClick={onClose}
             className="px-6 py-2 bg-[#0f2f5f] hover:bg-[#081932] text-white rounded-lg transition-colors"
           >
-            Annulla
+            Cancel
           </button>
           <button className="px-6 py-2 bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] rounded-lg transition-colors">
-            Salva Modifiche
+            Save Changes
           </button>
         </div>
       </div>
