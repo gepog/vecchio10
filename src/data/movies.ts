@@ -318,11 +318,6 @@ export const contentRows: ContentRow[] = [
     ],
   },
   {
-    id: 'originals',
-    title: 'Project Originals',
-    movies: movies.slice(1, 9),
-  },
-  {
     id: 'drama',
     title: 'Expo',
     movies: [
