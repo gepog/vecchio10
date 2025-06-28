@@ -122,19 +122,19 @@ export const Header: React.FC<HeaderProps> = ({
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-[#081932]/90 backdrop-blur-md' : 'bg-gradient-to-b from-[#081932]/80 to-transparent'
     }`}>
-      <div className="flex items-center justify-between px-4 md:px-8 py-3">
+      <div className="flex items-center justify-between px-4 md:px-8 py-2">
         <div className="flex items-center space-x-8">
           <button
             onClick={() => window.location.reload()}
-            className="hover:opacity-80 transition-opacity flex items-center justify-center h-12"
+            className="hover:opacity-80 transition-opacity flex items-center justify-center"
           >
             <img 
               src="/src/assets/ChatGPT Image 26 giu 2025, 11_48_17.png" 
               alt="Skà Logo" 
-              className="h-10 w-auto max-w-none scale-150"
+              className="h-14 w-auto max-w-none scale-150"
             />
           </button>
-          <nav className="hidden md:flex items-center space-x-6 h-12">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item, index) => (
               <button
                 key={item}
@@ -144,7 +144,7 @@ export const Header: React.FC<HeaderProps> = ({
                   item === 'Popular' ? handlePopularClick : 
                   undefined
                 }
-                className="text-white hover:text-gray-300 transition-colors text-xl px-6 py-3 h-full flex items-center"
+                className="text-white hover:text-gray-300 transition-colors text-xl px-6 py-3"
               >
                 {item}
               </button>
