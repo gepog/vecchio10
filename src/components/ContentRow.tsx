@@ -73,23 +73,31 @@ export const ContentRow: React.FC<ContentRowProps> = ({
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth"
+          className="flex space-x-4 overflow-x-auto overflow-y-visible scrollbar-hide scroll-smooth py-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {movies.map((movie) => {
+          {movies.map((movie, index) => {
             const isInMyList = myList.includes(movie.id);
+            const isFirst = index === 0;
+            const isLast = index === movies.length - 1;
             
             return (
               <div
                 key={movie.id}
-                className="relative flex-shrink-0 w-48 md:w-64 cursor-pointer"
+                className={`relative flex-shrink-0 w-48 md:w-64 cursor-pointer transition-all duration-300 ${
+                  hoveredMovie === movie.id 
+                    ? `scale-120 z-30 ${
+                        isFirst ? 'origin-left' : 
+                        isLast ? 'origin-right' : 
+                        'origin-center'
+                      }` 
+                    : 'scale-100 z-10'
+                }`}
                 onMouseEnter={() => setHoveredMovie(movie.id)}
                 onMouseLeave={() => setHoveredMovie(null)}
                 onClick={() => onMoreInfo(movie)}
               >
-                <div className={`relative overflow-hidden rounded-md transition-all duration-300 ${
-                  hoveredMovie === movie.id ? 'scale-105 z-20' : 'scale-100'
-                }`}>
+                <div className="relative overflow-hidden rounded-md">
                   <img
                     src={movie.thumbnail}
                     alt={movie.title}
