@@ -46,14 +46,9 @@ export const MovieModal: React.FC<MovieModalProps> = ({
                 src={movie.trailerUrl}
               />
             ) : (
-              <div
-                className="w-full h-full bg-cover bg-center"
+            <div>
+              <div>
                 style={{ backgroundImage: `url(${movie.backdrop})` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
-                <button
-                  onClick={() => setIsTrailerPlaying(true)}
-                  className="absolute inset-0 flex items-center justify-center group"
                 >
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors backdrop-blur-sm">
                     <Play size={28} className="text-white ml-1" fill="currentColor" />
@@ -139,29 +134,6 @@ export const MovieModal: React.FC<MovieModalProps> = ({
                   <ThumbsUp size={20} />
                   <span className="text-sm">{isLiked ? 'Unlike' : 'Like'}</span>
                 </button>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-white font-semibold mb-2">Genres</h3>
-                <div className="flex flex-wrap gap-2">
-                  {movie.genre.map((genre) => (
-                    <span
-                      key={genre}
-                      className="px-3 py-1 bg-gray-700 text-white/80 text-sm rounded-full"
-                    >
-                      {genre}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-white font-semibold mb-2">More Like This</h3>
-                <div className="text-white/60 text-sm">
-                  Discover similar content based on your preferences
-                </div>
               </div>
             </div>
           </div>
