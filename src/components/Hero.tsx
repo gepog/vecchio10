@@ -28,16 +28,6 @@ export const Hero: React.FC<HeroProps> = ({ movie, onPlay, onAddToList, onMoreIn
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
           {movie.title}
         </h1>
-        
-        <div className="flex items-center space-x-4 text-white/90 mb-6">
-          {movie.likes && (
-            <div className="flex items-center space-x-2">
-              <span className="text-red-500">❤</span>
-              <span className="text-sm">{movie.likes} likes</span>
-            </div>
-          )}
-        </div>
-
       </div>
     </div>
   );
