@@ -96,7 +96,6 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                     className="w-full h-36 md:h-48 object-cover"
                   />
                   
-                  <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300 ${
                   <div className={`absolute inset-0 bg-gradient-to-t from-[#081932]/80 via-transparent to-transparent transition-opacity duration-300 ${
                     hoveredMovie === movie.id ? 'opacity-100' : 'opacity-0'
                   }`} />
