@@ -48,6 +48,50 @@ export const Header: React.FC<HeaderProps> = ({
   const handleMyListClick = () => {
     const myListElement = document.getElementById('mylist-section');
     if (myListElement) {
+      // Get the title element within the section
+      const titleElement = myListElement.querySelector('h2');
+      if (titleElement) {
+        // Calculate offset to show the title properly
+        const elementTop = titleElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementTop - 100; // 100px offset from top
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        // Fallback to section scroll
+        myListElement.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
+  const handlePopularClick = () => {
+    const popularElement = document.getElementById('most-liked-section');
+    if (popularElement) {
+      // Get the title element within the section
+      const titleElement = popularElement.querySelector('h2');
+      if (titleElement) {
+        // Calculate offset to show the title properly
+        const elementTop = titleElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementTop - 100; // 100px offset from top
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        // Fallback to section scroll
+        popularElement.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
       myListElement.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
