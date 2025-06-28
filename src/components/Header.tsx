@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   const handlePopularClick = () => {
-    const popularElement = document.getElementById('most-liked-section');
+    const popularElement = document.querySelector('[data-carousel-title="Most Liked"]');
     if (popularElement) {
       popularElement.scrollIntoView({ 
         behavior: 'smooth',
