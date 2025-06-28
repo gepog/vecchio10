@@ -144,7 +144,7 @@ export const Header: React.FC<HeaderProps> = ({
                   item === 'Popular' ? handlePopularClick : 
                   undefined
                 }
-                className="text-white hover:text-gray-300 transition-colors text-lg px-4 py-2"
+                className="text-white hover:text-gray-300 transition-colors text-xl px-6 py-3"
               >
                 {item}
               </button>
