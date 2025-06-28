@@ -145,17 +145,14 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                           isMyListRow 
                             ? 'bg-[#ddb870]/80 text-[#081932] hover:bg-[#ddb870]' 
                             : isInMyList
-                              ? 'bg-[#ddb870]/80 text-[#081932] hover:bg-[#ddb870]'
+                              ? 'bg-[#ddb870] text-[#081932] hover:bg-[#ddb870]/80'
                               : 'bg-[#0f2f5f]/80 text-white hover:bg-[#ddb870] hover:text-[#081932]'
                         }`}
                       >
                         {isMyListRow ? (
                           <X size={16} />
                         ) : isInMyList ? (
-                          <>
-                            <Plus size={16} className="group-hover/button:hidden" />
-                            <X size={16} className="hidden group-hover/button:block" />
-                          </>
+                          <X size={16} />
                         ) : (
                           <Plus size={16} />
                         )}
