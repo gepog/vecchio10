@@ -127,12 +127,6 @@ function App() {
 
   // Update content rows with current like counts
   const updatedContentRows = contentRows.map(row => {
-    if (row.id === 'most-liked') {
-      const mostLiked = [...moviesWithUpdatedLikes]
-        .sort((a, b) => (b.likes || 0) - (a.likes || 0))
-        .slice(0, 8);
-      return { ...row, movies: mostLiked };
-    }
     return {
       ...row,
       movies: (Array.isArray(row.movies) ? row.movies : []).map(movie => 
@@ -140,6 +134,22 @@ function App() {
       )
     };
   });
+
+  // Get all movies from all carousels for the Most Liked section
+  const allMoviesFromCarousels: Movie[] = [];
+  updatedContentRows.forEach(row => {
+    if (row.id !== 'most-liked' && Array.isArray(row.movies)) {
+      allMoviesFromCarousels.push(...row.movies);
+    }
+  });
+  allMoviesFromCarousels.push(...moviesWithUpdatedLikes);
+
+  // Update the Most Liked carousel with the highest liked movies from all carousels
+  const mostLikedIndex = updatedContentRows.findIndex(row => row.id === 'most-liked');
+  if (mostLikedIndex !== -1) {
+    const mostLikedMovies = getMostLikedMovies(allMoviesFromCarousels);
+    updatedContentRows[mostLikedIndex] = { ...updatedContentRows[mostLikedIndex], movies: mostLikedMovies };
+  }
 
   // Also include custom movies from content rows that are in myList
   const myListMovies = movies.filter(movie => myList.includes(movie.id));
