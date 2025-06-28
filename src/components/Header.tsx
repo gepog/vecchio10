@@ -46,6 +46,12 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   const handleMyListClick = () => {
+    // Clear search when navigating
+    setSearchQuery('');
+    onSearch('');
+    setIsSearchOpen(false);
+    setShowSuggestions(false);
+    
     const myListElement = document.getElementById('mylist-section');
     if (myListElement) {
       // Get the title element within the section
@@ -70,6 +76,12 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   const handlePopularClick = () => {
+    // Clear search when navigating
+    setSearchQuery('');
+    onSearch('');
+    setIsSearchOpen(false);
+    setShowSuggestions(false);
+    
     const popularElement = document.getElementById('most-liked-section');
     if (popularElement) {
       // Get the title element within the section
@@ -91,6 +103,17 @@ export const Header: React.FC<HeaderProps> = ({
         });
       }
     }
+  };
+
+  const handleHomeClick = () => {
+    // Clear search when navigating to home
+    setSearchQuery('');
+    onSearch('');
+    setIsSearchOpen(false);
+    setShowSuggestions(false);
+    
+    // Scroll to top
+    onLogoClick();
   };
 
   const navItems = ['Home', 'Popular', 'My List'];
@@ -116,6 +139,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 key={item}
                 onClick={
+                  item === 'Home' ? handleHomeClick :
                   item === 'My List' ? handleMyListClick : 
                   item === 'Popular' ? handlePopularClick : 
                   undefined
