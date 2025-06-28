@@ -59,10 +59,10 @@ export const Header: React.FC<HeaderProps> = ({
     const popularElement = document.getElementById('most-liked-section');
     if (popularElement) {
       const elementTop = popularElement.offsetTop;
-      const offset = 100; // Adjust this value to show more or less of the title
+      const headerHeight = 80; // Height of the fixed header
       
       window.scrollTo({
-        top: elementTop - offset,
+        top: elementTop - headerHeight,
         behavior: 'smooth',
       });
     }
