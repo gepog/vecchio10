@@ -233,6 +233,9 @@ export const getMostLikedMovies = (): Movie[] => {
   return [...movies].sort((a, b) => (b.likes || 0) - (a.likes || 0)).slice(0, 8);
 };
 
+// Get the featured movie
+export const featuredMovie = movies.find(movie => movie.isFeatured) || movies[0];
+
 export const contentRows: ContentRow[] = [
   {
     id: 'most-liked',
