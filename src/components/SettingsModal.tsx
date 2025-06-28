@@ -154,7 +154,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                     <label className="block text-white/80 text-sm font-medium mb-2">
                       Lingua dell'interfaccia
                     </label>
-                    <select className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500">
                     <select className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]">
                       <option>Italiano</option>
                       <option>English</option>
@@ -214,7 +213,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                     <label className="block text-white/80 text-sm font-medium mb-2">
                       Qualità video
                     </label>
-                    <select className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500">
                     <select className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]">
                       <option>Auto</option>
                       <option>4K Ultra HD</option>
