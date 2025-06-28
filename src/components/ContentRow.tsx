@@ -86,7 +86,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                 key={movie.id}
                 className={`relative flex-shrink-0 w-48 md:w-64 cursor-pointer transition-all duration-300 ${
                   hoveredMovie === movie.id 
-                    ? `scale-120 z-30 ${
+                    ? `scale-130 z-30 ${
                         isFirst ? 'origin-left' : 
                         isLast ? 'origin-right' : 
                         'origin-center'

@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       scale: {
-        '120': '1.2',
+        '130': '1.3',
       },
     },
   },
