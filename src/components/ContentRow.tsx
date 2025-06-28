@@ -156,6 +156,11 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                         ) : (
                           <Plus size={16} />
                         )}
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onMoreInfo(movie);
                         }}
                         className="bg-gray-700/80 text-white p-2 rounded-full hover:bg-gray-700 transition-colors"
                       >

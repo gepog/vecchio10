@@ -46,10 +46,12 @@ export const MovieModal: React.FC<MovieModalProps> = ({
                 src={movie.trailerUrl}
               />
             ) : (
-            <div>
-              <div>
+              <div 
+                className="relative w-full h-full bg-cover bg-center flex items-center justify-center group cursor-pointer"
                 style={{ backgroundImage: `url(${movie.backdrop})` }}
-                >
+                onClick={() => setIsTrailerPlaying(true)}
+              >
+                <button className="relative">
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors backdrop-blur-sm">
                     <Play size={28} className="text-white ml-1" fill="currentColor" />
                   </div>
