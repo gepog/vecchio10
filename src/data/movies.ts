@@ -244,7 +244,7 @@ export const contentRows: ContentRow[] = [
   },
   {
     id: 'trending',
-    title: 'Trending Now',
+    title: 'Bolt.new',
     movies: [
       {
         ...movies[0],
