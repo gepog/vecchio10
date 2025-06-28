@@ -25,7 +25,6 @@ export const MovieModal: React.FC<MovieModalProps> = ({
   myList,
 }) => {
   const isInMyList = myList.includes(movie.id);
-  const [isTrailerPlaying, setIsTrailerPlaying] = useState(false);
 
   return (
     <div 
@@ -38,26 +37,12 @@ export const MovieModal: React.FC<MovieModalProps> = ({
       >
         <div className="relative">
           <div className="relative h-64 md:h-96 bg-black rounded-t-lg overflow-hidden">
-            {isTrailerPlaying ? (
-              <video
-                autoPlay
-                controls
-                className="w-full h-full object-cover"
-                src={movie.trailerUrl}
-              />
-            ) : (
-              <div 
-                className="relative w-full h-full bg-cover bg-center flex items-center justify-center group cursor-pointer"
-                style={{ backgroundImage: `url(${movie.backdrop})` }}
-                onClick={() => setIsTrailerPlaying(true)}
-              >
-                <button className="relative">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors backdrop-blur-sm">
-                    <Play size={28} className="text-white ml-1" fill="currentColor" />
-                  </div>
-                </button>
-              </div>
-            )}
+            <div 
+              className="w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${movie.backdrop})` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
+            </div>
           </div>
 
           <button
@@ -67,9 +52,7 @@ export const MovieModal: React.FC<MovieModalProps> = ({
             <X size={24} />
           </button>
 
-          <div className={`absolute left-4 right-4 transition-all duration-300 ${
-            isTrailerPlaying ? 'bottom-16 opacity-100' : 'bottom-4 opacity-100'
-          }`}>
+          <div className="absolute left-4 right-4 bottom-4">
             <h1 className="text-white text-3xl md:text-4xl font-bold mb-4">
               {movie.title}
             </h1>
