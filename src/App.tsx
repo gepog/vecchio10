@@ -10,7 +10,7 @@ import { NotificationDropdown } from './components/NotificationDropdown';
 import { SettingsModal } from './components/SettingsModal';
 import { HelpModal } from './components/HelpModal';
 import { LogoutModal } from './components/LogoutModal';
-import { featuredMovie, contentRows, movies, getMostLikedMovies } from './data/movies';
+import { featuredMovie, contentRows } from './data/movies';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { Movie } from './types';
 
@@ -42,7 +42,8 @@ function App() {
   const handleSearch = (query: string) => {
     setSearchQuery(query);
     if (query.trim()) {
-      const results = movies.filter(movie =>
+      const allMovies = contentRows.flatMap(row => row.movies);
+      const results = allMovies.filter(movie =>
         movie.title.toLowerCase().includes(query.toLowerCase()) ||
         movie.description.toLowerCase().includes(query.toLowerCase()) ||
         movie.genre.some(g => g.toLowerCase().includes(query.toLowerCase()))
@@ -119,42 +120,23 @@ function App() {
     }
   };
 
-  // Update movies with current like counts
-  const moviesWithUpdatedLikes = movies.map(movie => ({
+  // Update all movies with current like counts
+  const allMovies = contentRows.flatMap(row => row.movies);
+  const moviesWithUpdatedLikes = allMovies.map(movie => ({
     ...movie,
     likes: movieLikes[movie.id] || movie.likes || 0
   }));
 
   // Update content rows with current like counts
-  const updatedContentRows = contentRows.map(row => {
-    if (row.id === 'most-liked') {
-      const mostLiked = [...moviesWithUpdatedLikes]
-        .sort((a, b) => (b.likes || 0) - (a.likes || 0))
-        .slice(0, 8);
-      return { ...row, movies: mostLiked };
-    }
-    return {
-      ...row,
-      movies: (Array.isArray(row.movies) ? row.movies : []).map(movie => 
-        moviesWithUpdatedLikes.find(m => m.id === movie.id) || movie
-      )
-    };
-  });
+  const updatedContentRows = contentRows.map(row => ({
+    ...row,
+    movies: (Array.isArray(row.movies) ? row.movies : []).map(movie => 
+      moviesWithUpdatedLikes.find(m => m.id === movie.id) || movie
+    )
+  }));
 
-  // Also include custom movies from content rows that are in myList
-  const myListMovies = movies.filter(movie => myList.includes(movie.id));
-  
-  // Also include custom movies from content rows that are in myList
-  const customMoviesInMyList: Movie[] = [];
-  updatedContentRows.forEach(row => {
-    (Array.isArray(row.movies) ? row.movies : []).forEach(movie => {
-      if (myList.includes(movie.id) && !movies.find(m => m.id === movie.id)) {
-        customMoviesInMyList.push(movie);
-      }
-    });
-  });
-  
-  const allMyListMovies = [...myListMovies, ...customMoviesInMyList];
+  // Get movies that are in myList
+  const allMyListMovies = allMovies.filter(movie => myList.includes(movie.id));
   
   const finalContentRows = allMyListMovies.length > 0 
     ? [{ id: 'mylist', title: 'My List', movies: allMyListMovies }, ...updatedContentRows]
