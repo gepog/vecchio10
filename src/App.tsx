@@ -168,15 +168,22 @@ function App() {
   
   // Also include custom movies from content rows that are in myList
   const customMoviesInMyList: Movie[] = [];
+  const mostLikedMovieIds = new Set(mostLikedMovies.map(movie => movie.id));
+  
   finalUpdatedContentRows.forEach(row => {
     (Array.isArray(row.movies) ? row.movies : []).forEach(movie => {
-      if (myList.includes(movie.id) && !movies.find(m => m.id === movie.id)) {
+      if (myList.includes(movie.id) && 
+          !movies.find(m => m.id === movie.id) && 
+          !mostLikedMovieIds.has(movie.id) &&
+          !customMoviesInMyList.find(m => m.id === movie.id)) {
         customMoviesInMyList.push(movie);
       }
     });
   });
   
-  const allMyListMovies = [...myListMovies, ...customMoviesInMyList];
+  // Filter out any movies that are already in the Most Liked carousel
+  const filteredMyListMovies = myListMovies.filter(movie => !mostLikedMovieIds.has(movie.id));
+  const allMyListMovies = [...filteredMyListMovies, ...customMoviesInMyList];
   
   const finalContentRows = allMyListMovies.length > 0 
     ? [{ id: 'mylist', title: 'My List', movies: allMyListMovies }, ...finalUpdatedContentRows]
