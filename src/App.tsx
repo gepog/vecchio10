@@ -249,7 +249,11 @@ function App() {
             {finalContentRows.map((row) => (
               <div
                 key={row.id}
-                id={row.id === 'mylist' ? 'mylist-section' : undefined}
+                id={
+                  row.id === 'mylist' ? 'mylist-section' : 
+                  row.id === 'most-liked' ? 'most-liked-section' : 
+                  undefined
+                }
                 className={row.id === 'mylist' ? 'pt-16' : ''}
               >
                 <ContentRow
