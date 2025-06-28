@@ -552,17 +552,6 @@ export const contentRows: ContentRow[] = [
     ],
   },
   {
-    id: 'comedy',
-    title: 'Comedy Shows',
-    movies: (() => {
-      const comedyMovies = movies.filter(movie => movie.genre.includes('Comedy'));
-      while (comedyMovies.length < 8) {
-        comedyMovies.push(...comedyMovies.slice(0, 8 - comedyMovies.length));
-      }
-      return comedyMovies.slice(0, 8);
-    })(),
-  },
-  {
     id: 'crime',
     title: 'Crime & Mystery',
     movies: (() => {
