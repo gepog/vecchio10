@@ -239,7 +239,7 @@ export const featuredMovie = movies.find(movie => movie.isFeatured) || movies[0]
 export const contentRows: ContentRow[] = [
   {
     id: 'most-liked',
-    title: 'Most Liked',
+    title: 'Most Popular',
     movies: getMostLikedMovies(),
   },
   {
