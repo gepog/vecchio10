@@ -112,8 +112,8 @@ export const Header: React.FC<HeaderProps> = ({
     setIsSearchOpen(false);
     setShowSuggestions(false);
     
-    // Scroll to top
-    onLogoClick();
+    // Refresh the page
+    window.location.reload();
   };
 
   const navItems = ['Home', 'Popular', 'My List'];
@@ -125,7 +125,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="flex items-center justify-between px-4 md:px-8 py-4">
         <div className="flex items-center space-x-8">
           <button
-            onClick={onLogoClick}
+            onClick={() => window.location.reload()}
             className="hover:opacity-80 transition-opacity flex items-center justify-center"
           >
             <img 
