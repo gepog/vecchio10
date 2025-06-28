@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({
             <img 
               src="/src/assets/ChatGPT Image 26 giu 2025, 11_48_17.png" 
               alt="Skà Logo" 
-              className="h-8 w-auto transform scale-[2.2] origin-center"
+              className="h-8 w-auto transform scale-[2.0] origin-center"
             />
           </button>
           <nav className="hidden md:flex items-center space-x-6">
