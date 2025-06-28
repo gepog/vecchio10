@@ -73,7 +73,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex space-x-4 overflow-x-auto overflow-y-visible scrollbar-hide scroll-smooth py-4"
+          className="flex space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth py-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {movies.map((movie, index) => {
