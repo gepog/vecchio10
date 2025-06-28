@@ -135,7 +135,7 @@ function App() {
     }
     return {
       ...row,
-      movies: (row.movies || []).map(movie => 
+      movies: (Array.isArray(row.movies) ? row.movies : []).map(movie => 
         moviesWithUpdatedLikes.find(m => m.id === movie.id) || movie
       )
     };
