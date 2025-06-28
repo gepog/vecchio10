@@ -65,12 +65,12 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center space-x-8">
           <button
             onClick={onLogoClick}
-            className="hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity flex items-center justify-center"
           >
             <img 
               src="/src/assets/ChatGPT Image 26 giu 2025, 11_48_17.png" 
               alt="Skà Logo" 
-              className="h-8 w-auto"
+              className="h-8 w-auto transform scale-125 origin-center"
             />
           </button>
           <nav className="hidden md:flex items-center space-x-6">
