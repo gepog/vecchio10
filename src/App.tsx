@@ -135,28 +135,40 @@ function App() {
     };
   });
 
-  // Get all movies from all carousels for the Most Liked section
+  // Get all unique movies from all carousels (excluding Most Liked carousel itself)
   const allMoviesFromCarousels: Movie[] = [];
+  const seenMovieIds = new Set<string>();
+  
   updatedContentRows.forEach(row => {
     if (row.id !== 'most-liked' && Array.isArray(row.movies)) {
-      allMoviesFromCarousels.push(...row.movies);
+      row.movies.forEach(movie => {
+        if (!seenMovieIds.has(movie.id)) {
+          seenMovieIds.add(movie.id);
+          allMoviesFromCarousels.push(movie);
+        }
+      });
     }
   });
-  allMoviesFromCarousels.push(...moviesWithUpdatedLikes);
 
-  // Update the Most Liked carousel with the highest liked movies from all carousels
-  const mostLikedIndex = updatedContentRows.findIndex(row => row.id === 'most-liked');
-  if (mostLikedIndex !== -1) {
-    const mostLikedMovies = getMostLikedMovies(allMoviesFromCarousels);
-    updatedContentRows[mostLikedIndex] = { ...updatedContentRows[mostLikedIndex], movies: mostLikedMovies };
-  }
+  // Sort all movies by likes and take top 8 for Most Liked carousel
+  const mostLikedMovies = allMoviesFromCarousels
+    .sort((a, b) => (b.likes || 0) - (a.likes || 0))
+    .slice(0, 8);
+
+  // Update the Most Liked carousel
+  const finalUpdatedContentRows = updatedContentRows.map(row => {
+    if (row.id === 'most-liked') {
+      return { ...row, movies: mostLikedMovies };
+    }
+    return row;
+  });
 
   // Also include custom movies from content rows that are in myList
   const myListMovies = movies.filter(movie => myList.includes(movie.id));
   
   // Also include custom movies from content rows that are in myList
   const customMoviesInMyList: Movie[] = [];
-  updatedContentRows.forEach(row => {
+  finalUpdatedContentRows.forEach(row => {
     (Array.isArray(row.movies) ? row.movies : []).forEach(movie => {
       if (myList.includes(movie.id) && !movies.find(m => m.id === movie.id)) {
         customMoviesInMyList.push(movie);
@@ -167,8 +179,8 @@ function App() {
   const allMyListMovies = [...myListMovies, ...customMoviesInMyList];
   
   const finalContentRows = allMyListMovies.length > 0 
-    ? [{ id: 'mylist', title: 'My List', movies: allMyListMovies }, ...updatedContentRows]
-    : updatedContentRows;
+    ? [{ id: 'mylist', title: 'My List', movies: allMyListMovies }, ...finalUpdatedContentRows]
+    : finalUpdatedContentRows;
 
   return (
     <div className="bg-black min-h-screen">
