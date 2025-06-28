@@ -124,8 +124,6 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ movie, onClose }) => {
                 }}
               >
                 <div
-                  className="h-full bg-red-600 rounded-full relative"
-                <div
                   className="h-full bg-[#ddb870] rounded-full relative"
                   style={{ width: `${(currentTime / duration) * 100}%` }}
                 >
@@ -180,6 +178,5 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ movie, onClose }) => {
         </div>
       </div>
     </div>
-  )
   );
 };
