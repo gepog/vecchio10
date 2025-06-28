@@ -28,11 +28,11 @@ export const MovieModal: React.FC<MovieModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 bg-[#081932]/80 z-30 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-[#081932]/80 z-30 flex items-center justify-center p-4 pt-20"
       onClick={onClose}
     >
       <div 
-        className="bg-[#0f2f5f] rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-[#0f2f5f] rounded-lg max-w-4xl w-full max-h-[calc(100vh-6rem)] overflow-y-auto mt-4"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative">
