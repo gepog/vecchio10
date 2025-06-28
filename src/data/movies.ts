@@ -3,7 +3,7 @@ import { Movie, ContentRow } from '../types';
 export const movies: Movie[] = [
   {
     id: '1',
-    title: 'Stranger Things',
+    title: 'AI Hackathon News',
     description: 'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.',
     genre: ['Sci-Fi', 'Horror', 'Drama'],
     year: 2016,
