@@ -112,7 +112,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                     <div className="flex items-center space-x-2 mb-3">
                       {movie.likes && (
                         <div className="flex items-center space-x-1">
-                          <span className="text-[#ebdcb5] text-xs">❤</span>
+                          <span className="text-xs" style={{ color: '#ebdcb5' }}>❤</span>
                           <span className="text-white/70 text-xs">{movie.likes}</span>
                         </div>
                       )}
