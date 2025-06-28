@@ -22,7 +22,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   if (!query) return null;
 
   return (
-    <div className="min-h-screen bg-black pt-20 px-4 md:px-8">
+    <div className="min-h-screen bg-[#081932] pt-20 px-4 md:px-8">
       <h1 className="text-white text-2xl md:text-3xl font-bold mb-8">
         Search results for "{query}"
       </h1>
@@ -50,7 +50,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
                   className="w-full h-48 md:h-64 object-cover"
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#081932]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                   <h3 className="text-white font-semibold text-sm mb-2 line-clamp-2">
@@ -77,8 +77,8 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
                      }}
                       className={`p-2 rounded-full transition-all duration-200 group/button ${
                         isInMyList
-                          ? 'bg-gray-700/80 text-white hover:bg-red-500'
-                          : 'bg-gray-700/80 text-white hover:bg-green-500'
+                          ? 'bg-[#0f2f5f]/80 text-white hover:bg-[#ddb870] hover:text-[#081932]'
+                          : 'bg-[#0f2f5f]/80 text-white hover:bg-[#ebdcb5] hover:text-[#081932]'
                       }`}
                     >
                       {isInMyList ? (
@@ -95,7 +95,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
                        e.stopPropagation();
                        onMoreInfo(movie);
                      }}
-                      className="bg-gray-700/80 text-white p-2 rounded-full hover:bg-gray-700 transition-colors"
+                      className="bg-[#0f2f5f]/80 text-white p-2 rounded-full hover:bg-[#0f2f5f] transition-colors"
                     >
                       <Info size={16} />
                     </button>

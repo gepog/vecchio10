@@ -28,26 +28,26 @@ export const MovieModal: React.FC<MovieModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 bg-black/80 z-40 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-[#081932]/80 z-40 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div 
-        className="bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-[#0f2f5f] rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative">
-          <div className="relative h-64 md:h-96 bg-black rounded-t-lg overflow-hidden">
+          <div className="relative h-64 md:h-96 bg-[#081932] rounded-t-lg overflow-hidden">
             <div 
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${movie.backdrop})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f2f5f] via-transparent to-transparent" />
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors p-2 bg-black/50 rounded-full"
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors p-2 bg-[#081932]/50 rounded-full"
           >
             <X size={24} />
           </button>
@@ -68,10 +68,10 @@ export const MovieModal: React.FC<MovieModalProps> = ({
 
               <button
                 onClick={() => onAddToList(movie)}
-                className={`flex items-center justify-center space-x-3 bg-gray-600/80 text-white px-6 py-3 rounded-md font-semibold backdrop-blur-sm transition-all duration-200 group/button ${
+                className={`flex items-center justify-center space-x-3 bg-[#0f2f5f]/80 text-white px-6 py-3 rounded-md font-semibold backdrop-blur-sm transition-all duration-200 group/button ${
                   isInMyList 
-                    ? 'hover:bg-red-500/90' 
-                    : 'hover:bg-green-500/90'
+                    ? 'hover:bg-[#ddb870]/90 hover:text-[#081932]' 
+                    : 'hover:bg-[#ebdcb5]/90 hover:text-[#081932]'
                 }`}
               >
                 {isInMyList ? (
@@ -92,7 +92,7 @@ export const MovieModal: React.FC<MovieModalProps> = ({
           <div className="space-y-6">
             <div className="flex items-center space-x-4 text-white/90 mb-4">
               <div className="flex items-center space-x-2">
-                <Heart size={16} className="text-red-500" fill="currentColor" />
+                <Heart size={16} className="text-[#ddb870]" fill="currentColor" />
                 <span className="text-sm font-medium">{currentLikes.toLocaleString()}</span>
               </div>
             </div>
@@ -106,8 +106,8 @@ export const MovieModal: React.FC<MovieModalProps> = ({
                 onClick={() => onLike(movie)}
                 className={`flex items-center space-x-2 transition-colors ${
                   isLiked 
-                    ? 'text-green-500' 
-                    : 'text-white hover:text-green-500'
+                    ? 'text-[#ebdcb5]' 
+                    : 'text-white hover:text-[#ebdcb5]'
                 }`}
               >
                 <ThumbsUp size={20} />

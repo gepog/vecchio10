@@ -79,8 +79,8 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-      <div className="bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
+    <div className="fixed inset-0 bg-[#081932]/80 z-50 flex items-center justify-center p-4">
+      <div className="bg-[#0f2f5f] rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
           <h2 className="text-white text-2xl font-bold">Centro Assistenza</h2>
           <button
@@ -100,33 +100,33 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
               placeholder="Cerca nella guida..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-gray-800 border border-gray-600 rounded-lg pl-10 pr-4 py-3 text-white focus:outline-none focus:border-red-500"
+              className="w-full bg-[#081932] border border-gray-600 rounded-lg pl-10 pr-4 py-3 text-white focus:outline-none focus:border-[#ddb870]"
             />
           </div>
 
           {/* Contact Options */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className="bg-gray-800 p-4 rounded-lg text-center">
-              <MessageCircle className="mx-auto mb-2 text-red-500" size={32} />
+            <div className="bg-[#081932] p-4 rounded-lg text-center">
+              <MessageCircle className="mx-auto mb-2 text-[#ddb870]" size={32} />
               <h3 className="text-white font-semibold mb-1">Chat Live</h3>
               <p className="text-white/60 text-sm mb-3">Disponibile 24/7</p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors">
+              <button className="bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] px-4 py-2 rounded-lg transition-colors">
                 Avvia Chat
               </button>
             </div>
-            <div className="bg-gray-800 p-4 rounded-lg text-center">
-              <Phone className="mx-auto mb-2 text-red-500" size={32} />
+            <div className="bg-[#081932] p-4 rounded-lg text-center">
+              <Phone className="mx-auto mb-2 text-[#ddb870]" size={32} />
               <h3 className="text-white font-semibold mb-1">Telefono</h3>
               <p className="text-white/60 text-sm mb-3">Lun-Ven 9:00-18:00</p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors">
+              <button className="bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] px-4 py-2 rounded-lg transition-colors">
                 Chiama Ora
               </button>
             </div>
-            <div className="bg-gray-800 p-4 rounded-lg text-center">
-              <Mail className="mx-auto mb-2 text-red-500" size={32} />
+            <div className="bg-[#081932] p-4 rounded-lg text-center">
+              <Mail className="mx-auto mb-2 text-[#ddb870]" size={32} />
               <h3 className="text-white font-semibold mb-1">Email</h3>
               <p className="text-white/60 text-sm mb-3">Risposta in 24h</p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors">
+              <button className="bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] px-4 py-2 rounded-lg transition-colors">
                 Invia Email
               </button>
             </div>
@@ -134,7 +134,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
 
           <div className="flex h-96">
             {/* Categories Sidebar */}
-            <div className="w-64 bg-gray-800 rounded-l-lg p-4">
+            <div className="w-64 bg-[#081932] rounded-l-lg p-4">
               <h3 className="text-white font-semibold mb-4">Categorie</h3>
               <nav className="space-y-2">
                 {categories.map((category) => {
@@ -145,8 +145,8 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
                       onClick={() => setActiveCategory(category.id)}
                       className={`w-full flex items-center space-x-3 p-3 rounded-lg transition-colors text-left ${
                         activeCategory === category.id
-                          ? 'bg-red-600 text-white'
-                          : 'text-white/80 hover:bg-gray-700'
+                          ? 'bg-[#ddb870] text-[#081932]'
+                          : 'text-white/80 hover:bg-[#0f2f5f]'
                       }`}
                     >
                       <Icon size={20} />
@@ -158,7 +158,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* FAQ Content */}
-            <div className="flex-1 bg-gray-800 rounded-r-lg p-6 overflow-y-auto">
+            <div className="flex-1 bg-[#081932] rounded-r-lg p-6 overflow-y-auto">
               <h3 className="text-white text-lg font-semibold mb-4">
                 Domande Frequenti - {categories.find(c => c.id === activeCategory)?.label}
               </h3>

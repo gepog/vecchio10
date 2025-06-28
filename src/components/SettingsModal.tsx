@@ -21,8 +21,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
   ];
 
   return (
-    <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-      <div className="bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
+    <div className="fixed inset-0 bg-[#081932]/80 z-50 flex items-center justify-center p-4">
+      <div className="bg-[#0f2f5f] rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
           <h2 className="text-white text-2xl font-bold">Impostazioni</h2>
           <button
@@ -35,7 +35,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
 
         <div className="flex h-[600px]">
           {/* Sidebar */}
-          <div className="w-64 bg-gray-800 p-4">
+          <div className="w-64 bg-[#081932] p-4">
             <nav className="space-y-2">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
@@ -45,8 +45,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center space-x-3 p-3 rounded-lg transition-colors text-left ${
                       activeTab === tab.id
-                        ? 'bg-red-600 text-white'
-                        : 'text-white/80 hover:bg-gray-700'
+                        ? 'bg-[#ddb870] text-[#081932]'
+                        : 'text-white/80 hover:bg-[#0f2f5f]'
                     }`}
                   >
                     <Icon size={20} />
@@ -70,7 +70,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                     <input
                       type="text"
                       defaultValue="John Doe"
-                      className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500"
+                      className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]"
                     />
                   </div>
                   <div>
@@ -80,14 +80,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                     <input
                       type="email"
                       defaultValue="john.doe@email.com"
-                      className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500"
+                      className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]"
                     />
                   </div>
                   <div>
                     <label className="block text-white/80 text-sm font-medium mb-2">
                       Password
                     </label>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors">
+                    <button className="bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] px-4 py-2 rounded-lg transition-colors">
                       Cambia Password
                     </button>
                   </div>
@@ -105,14 +105,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                     { label: 'Promemoria', desc: 'Ricorda dove hai interrotto la visione' },
                     { label: 'Email marketing', desc: 'Offerte speciali e aggiornamenti via email' },
                   ].map((item) => (
-                    <div key={item.label} className="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
+                    <div key={item.label} className="flex items-center justify-between p-4 bg-[#081932] rounded-lg">
                       <div>
                         <h4 className="text-white font-medium">{item.label}</h4>
                         <p className="text-white/60 text-sm">{item.desc}</p>
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" className="sr-only peer" defaultChecked />
-                        <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+                        <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#ddb870]"></div>
                       </label>
                     </div>
                   ))}
@@ -124,21 +124,21 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
               <div className="space-y-6">
                 <h3 className="text-white text-xl font-semibold">Privacy e Sicurezza</h3>
                 <div className="space-y-4">
-                  <div className="p-4 bg-gray-800 rounded-lg">
+                  <div className="p-4 bg-[#081932] rounded-lg">
                     <h4 className="text-white font-medium mb-2">Cronologia di visione</h4>
                     <p className="text-white/60 text-sm mb-3">
                       Gestisci la tua cronologia di visione e i dati di utilizzo
                     </p>
-                    <button className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors">
+                    <button className="bg-[#0f2f5f] hover:bg-[#081932] text-white px-4 py-2 rounded-lg transition-colors">
                       Cancella Cronologia
                     </button>
                   </div>
-                  <div className="p-4 bg-gray-800 rounded-lg">
+                  <div className="p-4 bg-[#081932] rounded-lg">
                     <h4 className="text-white font-medium mb-2">Download dei tuoi dati</h4>
                     <p className="text-white/60 text-sm mb-3">
                       Scarica una copia dei tuoi dati personali
                     </p>
-                    <button className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors">
+                    <button className="bg-[#0f2f5f] hover:bg-[#081932] text-white px-4 py-2 rounded-lg transition-colors">
                       Richiedi Download
                     </button>
                   </div>
@@ -155,6 +155,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                       Lingua dell'interfaccia
                     </label>
                     <select className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500">
+                    <select className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]">
                       <option>Italiano</option>
                       <option>English</option>
                       <option>Español</option>
@@ -166,7 +167,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                     <label className="block text-white/80 text-sm font-medium mb-2">
                       Regione
                     </label>
-                    <select className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500">
+                    <select className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]">
                       <option>Italia</option>
                       <option>Stati Uniti</option>
                       <option>Regno Unito</option>
@@ -192,8 +193,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                           key={theme}
                           className={`p-3 rounded-lg border-2 transition-colors ${
                             theme === 'Scuro'
-                              ? 'border-red-600 bg-gray-800'
-                              : 'border-gray-600 bg-gray-800 hover:border-gray-500'
+                              ? 'border-[#ddb870] bg-[#081932]'
+                              : 'border-gray-600 bg-[#081932] hover:border-gray-500'
                           }`}
                         >
                           <div className="text-white text-sm font-medium">{theme}</div>
@@ -214,6 +215,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                       Qualità video
                     </label>
                     <select className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-red-500">
+                    <select className="w-full bg-[#081932] border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-[#ddb870]">
                       <option>Auto</option>
                       <option>4K Ultra HD</option>
                       <option>HD 1080p</option>
@@ -221,14 +223,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                       <option>SD 480p</option>
                     </select>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-[#081932] rounded-lg">
                     <div>
                       <h4 className="text-white font-medium">Riproduzione automatica</h4>
                       <p className="text-white/60 text-sm">Avvia automaticamente il prossimo episodio</p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+                      <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#ddb870]"></div>
                     </label>
                   </div>
                 </div>
@@ -240,11 +242,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
         <div className="p-6 border-t border-gray-700 flex justify-end space-x-4">
           <button
             onClick={onClose}
-            className="px-6 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
+            className="px-6 py-2 bg-[#0f2f5f] hover:bg-[#081932] text-white rounded-lg transition-colors"
           >
             Annulla
           </button>
-          <button className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors">
+          <button className="px-6 py-2 bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] rounded-lg transition-colors">
             Salva Modifiche
           </button>
         </div>

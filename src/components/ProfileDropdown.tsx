@@ -20,10 +20,10 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({
 
   return (
     <div className="fixed inset-0 z-40" onClick={onClose}>
-      <div className="absolute top-16 right-4 md:right-8 bg-black/90 backdrop-blur-md border border-gray-700 rounded-md shadow-xl min-w-48">
+      <div className="absolute top-16 right-4 md:right-8 bg-[#081932]/90 backdrop-blur-md border border-gray-700 rounded-md shadow-xl min-w-48">
         <div className="p-2">
           <div className="flex items-center space-x-3 p-3 border-b border-gray-700">
-            <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center">
+            <div className="w-8 h-8 bg-[#ddb870] rounded flex items-center justify-center">
               <User size={16} className="text-white" />
             </div>
             <div>
@@ -39,7 +39,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({
                 onSettings();
                 onClose();
               }}
-              className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-gray-700/50 rounded transition-colors"
+              className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-[#0f2f5f]/50 rounded transition-colors"
             >
               <Settings size={16} />
               <span className="text-sm">Impostazioni</span>
@@ -50,7 +50,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({
                 onHelp();
                 onClose();
               }}
-              className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-gray-700/50 rounded transition-colors"
+              className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-[#0f2f5f]/50 rounded transition-colors"
             >
               <HelpCircle size={16} />
               <span className="text-sm">Centro Assistenza</span>
@@ -64,7 +64,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({
                 onSignOut();
                 onClose();
               }}
-              className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-gray-700/50 rounded transition-colors"
+              className="flex items-center space-x-3 w-full text-left p-2 text-white hover:bg-[#0f2f5f]/50 rounded transition-colors"
             >
               <LogOut size={16} />
               <span className="text-sm">Esci</span>

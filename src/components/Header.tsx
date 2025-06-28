@@ -59,7 +59,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/90 backdrop-blur-md' : 'bg-gradient-to-b from-black/80 to-transparent'
+      isScrolled ? 'bg-[#081932]/90 backdrop-blur-md' : 'bg-gradient-to-b from-[#081932]/80 to-transparent'
     }`}>
       <div className="flex items-center justify-between px-4 md:px-8 py-4">
         <div className="flex items-center space-x-8">
@@ -106,12 +106,12 @@ export const Header: React.FC<HeaderProps> = ({
                     }}
                     onFocus={() => searchQuery && setShowSuggestions(true)}
                     placeholder="Search titles..."
-                    className="bg-black/80 border border-gray-600 rounded px-3 py-1 text-white text-sm w-64 focus:outline-none focus:border-white"
+                    className="bg-[#081932]/80 border border-gray-600 rounded px-3 py-1 text-white text-sm w-64 focus:outline-none focus:border-[#ddb870]"
                   />
                 </form>
                 
                 {showSuggestions && searchSuggestions.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-black/95 backdrop-blur-md border border-gray-700 rounded-md shadow-xl max-h-80 overflow-y-auto z-50">
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#081932]/95 backdrop-blur-md border border-gray-700 rounded-md shadow-xl max-h-80 overflow-y-auto z-50">
                     {searchSuggestions.slice(0, 6).map((movie) => (
                       <div
                         key={movie.id}
@@ -151,14 +151,14 @@ export const Header: React.FC<HeaderProps> = ({
             className="text-white hover:text-gray-300 transition-colors p-2 relative"
           >
             <Bell size={20} />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full"></div>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#ddb870] rounded-full"></div>
           </button>
 
           <button
             onClick={onProfileClick}
             className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors"
           >
-            <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center">
+            <div className="w-8 h-8 bg-[#ddb870] rounded flex items-center justify-center">
               <User size={16} />
             </div>
             <ChevronDown size={16} />

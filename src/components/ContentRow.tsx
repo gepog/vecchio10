@@ -55,7 +55,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
         {canScrollLeft && (
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/80 hover:bg-black text-white p-2 rounded-r-md opacity-0 group-hover:opacity-100 transition-all duration-300"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#081932]/80 hover:bg-[#081932] text-white p-2 rounded-r-md opacity-0 group-hover:opacity-100 transition-all duration-300"
           >
             <ChevronLeft size={24} />
           </button>
@@ -64,7 +64,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
         {canScrollRight && (
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/80 hover:bg-black text-white p-2 rounded-l-md opacity-0 group-hover:opacity-100 transition-all duration-300"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#081932]/80 hover:bg-[#081932] text-white p-2 rounded-l-md opacity-0 group-hover:opacity-100 transition-all duration-300"
           >
             <ChevronRight size={24} />
           </button>
@@ -97,6 +97,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                   />
                   
                   <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300 ${
+                  <div className={`absolute inset-0 bg-gradient-to-t from-[#081932]/80 via-transparent to-transparent transition-opacity duration-300 ${
                     hoveredMovie === movie.id ? 'opacity-100' : 'opacity-0'
                   }`} />
                   
@@ -112,7 +113,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                     <div className="flex items-center space-x-2 mb-3">
                       {movie.likes && (
                         <div className="flex items-center space-x-1">
-                          <span className="text-red-500 text-xs">❤</span>
+                          <span className="text-[#ddb870] text-xs">❤</span>
                           <span className="text-white/70 text-xs">{movie.likes}</span>
                         </div>
                       )}
@@ -135,10 +136,10 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                         }}
                         className={`p-2 rounded-full transition-all duration-200 group/button ${
                           isMyListRow 
-                            ? 'bg-red-600/80 text-white hover:bg-red-600' 
+                            ? 'bg-[#ddb870]/80 text-[#081932] hover:bg-[#ddb870]' 
                             : isInMyList
-                              ? 'bg-gray-700/80 text-white hover:bg-red-500'
-                              : 'bg-gray-700/80 text-white hover:bg-green-500'
+                              ? 'bg-[#0f2f5f]/80 text-white hover:bg-[#ddb870] hover:text-[#081932]'
+                              : 'bg-[#0f2f5f]/80 text-white hover:bg-[#ebdcb5] hover:text-[#081932]'
                         }`}
                       >
                         {isMyListRow ? (
@@ -157,7 +158,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                           e.stopPropagation();
                           onMoreInfo(movie);
                         }}
-                        className="bg-gray-700/80 text-white p-2 rounded-full hover:bg-gray-700 transition-colors"
+                        className="bg-[#0f2f5f]/80 text-white p-2 rounded-full hover:bg-[#0f2f5f] transition-colors"
                       >
                         <Info size={16} />
                       </button>

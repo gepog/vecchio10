@@ -76,7 +76,7 @@ export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
 
   return (
     <div className="fixed inset-0 z-40" onClick={onClose}>
-      <div className="absolute top-16 right-4 md:right-20 bg-black/95 backdrop-blur-md border border-gray-700 rounded-md shadow-xl w-80 max-h-96 overflow-y-auto">
+      <div className="absolute top-16 right-4 md:right-20 bg-[#081932]/95 backdrop-blur-md border border-gray-700 rounded-md shadow-xl w-80 max-h-96 overflow-y-auto">
         <div className="p-4 border-b border-gray-700">
           <h3 className="text-white font-semibold text-lg">Notifications</h3>
         </div>
@@ -85,8 +85,8 @@ export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
           {notifications.map((notification) => (
             <div
               key={notification.id}
-              className={`p-4 hover:bg-gray-800/50 transition-colors cursor-pointer ${
-                !notification.isRead ? 'bg-gray-800/30' : ''
+              className={`p-4 hover:bg-[#0f2f5f]/50 transition-colors cursor-pointer ${
+                !notification.isRead ? 'bg-[#0f2f5f]/30' : ''
               }`}
             >
               <div className="flex space-x-3">
@@ -106,7 +106,7 @@ export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
                       {notification.title}
                     </h4>
                     {!notification.isRead && (
-                      <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-[#ddb870] rounded-full flex-shrink-0"></div>
                     )}
                   </div>
                   <p className={`text-xs ${
@@ -122,7 +122,7 @@ export const NotificationDropdown: React.FC<NotificationDropdownProps> = ({
         </div>
         
         <div className="p-4 border-t border-gray-700">
-          <button className="text-red-500 hover:text-red-400 text-sm font-medium transition-colors">
+          <button className="text-[#ddb870] hover:text-[#ebdcb5] text-sm font-medium transition-colors">
             Mark all as read
           </button>
         </div>

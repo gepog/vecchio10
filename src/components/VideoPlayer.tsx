@@ -86,7 +86,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ movie, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-[#081932] z-50 flex items-center justify-center">
       <div
         className="relative w-full h-full cursor-pointer"
         onMouseMove={() => setShowControls(true)}
@@ -100,7 +100,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ movie, onClose }) => {
           onPause={() => setIsPlaying(false)}
         />
 
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 transition-opacity duration-300 ${
+        <div className={`absolute inset-0 bg-gradient-to-t from-[#081932]/80 via-transparent to-[#081932]/40 transition-opacity duration-300 ${
           showControls ? 'opacity-100' : 'opacity-0'
         }`}>
           <div className="absolute top-4 left-4 right-4 flex justify-between items-center">
@@ -125,9 +125,11 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ movie, onClose }) => {
               >
                 <div
                   className="h-full bg-red-600 rounded-full relative"
+                <div
+                  className="h-full bg-[#ddb870] rounded-full relative"
                   style={{ width: `${(currentTime / duration) * 100}%` }}
                 >
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-red-600 rounded-full"></div>
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#ddb870] rounded-full"></div>
                 </div>
               </div>
               <div className="flex justify-between text-white/70 text-sm mt-1">

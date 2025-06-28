@@ -35,8 +35,8 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
   ];
 
   return (
-    <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-      <div className="bg-gray-900 rounded-lg max-w-md w-full">
+    <div className="fixed inset-0 bg-[#081932]/80 z-50 flex items-center justify-center p-4">
+      <div className="bg-[#0f2f5f] rounded-lg max-w-md w-full">
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
           <h2 className="text-white text-xl font-bold">
             {showSwitchAccount ? 'Cambia Account' : 'Esci dall\'Account'}
@@ -53,8 +53,8 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
           {!showSwitchAccount ? (
             <div className="space-y-6">
               {/* Current User Info */}
-              <div className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg">
-                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+              <div className="flex items-center space-x-4 p-4 bg-[#081932] rounded-lg">
+                <div className="w-12 h-12 bg-[#ddb870] rounded-full flex items-center justify-center">
                   <User size={20} className="text-white" />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
                 <div className="space-y-3">
                   <button
                     onClick={handleSwitchAccount}
-                    className="w-full bg-gray-700 hover:bg-gray-600 text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                    className="w-full bg-[#0f2f5f] hover:bg-[#081932] text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
                   >
                     <ArrowRight size={20} />
                     <span>Cambia Account</span>
@@ -79,14 +79,14 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
 
                   <button
                     onClick={onConfirmLogout}
-                    className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg transition-colors"
+                    className="w-full bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] py-3 px-4 rounded-lg transition-colors"
                   >
                     Esci
                   </button>
 
                   <button
                     onClick={onClose}
-                    className="w-full bg-transparent border border-gray-600 hover:border-gray-500 text-white py-3 px-4 rounded-lg transition-colors"
+                    className="w-full bg-transparent border border-gray-600 hover:border-[#ddb870] text-white py-3 px-4 rounded-lg transition-colors"
                   >
                     Annulla
                   </button>
@@ -106,9 +106,9 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
                         console.log('Switching to:', account.email);
                         onClose();
                       }}
-                      className="w-full flex items-center space-x-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                      className="w-full flex items-center space-x-3 p-3 bg-[#081932] hover:bg-[#0f2f5f] rounded-lg transition-colors"
                     >
-                      <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-[#ddb870] rounded-full flex items-center justify-center">
                         <span className="text-white font-semibold">{account.avatar}</span>
                       </div>
                       <div className="flex-1 text-left">
@@ -131,7 +131,7 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
                       placeholder="Email"
                       value={loginForm.email}
                       onChange={(e) => setLoginForm({ ...loginForm, email: e.target.value })}
-                      className="w-full bg-gray-800 border border-gray-600 rounded-lg pl-10 pr-4 py-3 text-white focus:outline-none focus:border-red-500"
+                      className="w-full bg-[#081932] border border-gray-600 rounded-lg pl-10 pr-4 py-3 text-white focus:outline-none focus:border-[#ddb870]"
                       required
                     />
                   </div>
@@ -142,13 +142,13 @@ export const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose, onCon
                       placeholder="Password"
                       value={loginForm.password}
                       onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
-                      className="w-full bg-gray-800 border border-gray-600 rounded-lg pl-10 pr-4 py-3 text-white focus:outline-none focus:border-red-500"
+                      className="w-full bg-[#081932] border border-gray-600 rounded-lg pl-10 pr-4 py-3 text-white focus:outline-none focus:border-[#ddb870]"
                       required
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg transition-colors"
+                    className="w-full bg-[#ddb870] hover:bg-[#ebdcb5] text-[#081932] py-3 px-4 rounded-lg transition-colors"
                   >
                     Accedi
                   </button>
