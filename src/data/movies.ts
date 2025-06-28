@@ -226,34 +226,6 @@ export const movies: Movie[] = [
     trailerUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
     likes: 1680,
   },
-  {
-    id: '17',
-    title: 'The Boys',
-    description: 'A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers.',
-    genre: ['Action', 'Comedy', 'Crime'],
-    year: 2019,
-    rating: 'TV-MA',
-    duration: '60min',
-    thumbnail: 'https://images.pexels.com/photos/6896378/pexels-photo-6896378.jpeg?auto=compress&cs=tinysrgb&w=400',
-    backdrop: 'https://images.pexels.com/photos/6896378/pexels-photo-6896378.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
-    trailerUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
-    likes: 2350,
-  },
-  {
-    id: '18',
-    title: 'Peaky Blinders',
-    description: 'A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps.',
-    genre: ['Crime', 'Drama', 'History'],
-    year: 2013,
-    rating: 'TV-MA',
-    duration: '60min',
-    thumbnail: 'https://images.pexels.com/photos/8721365/pexels-photo-8721365.jpeg?auto=compress&cs=tinysrgb&w=400',
-    backdrop: 'https://images.pexels.com/photos/8721365/pexels-photo-8721365.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4',
-    trailerUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4',
-    likes: 1920,
-  },
 ];
 
 // Get most liked movies sorted by likes
@@ -600,23 +572,9 @@ export const contentRows: ContentRow[] = [
     title: 'Crime & Mystery',
     movies: (() => {
       const crimeMovies = movies.filter(movie => movie.genre.includes('Crime') || movie.genre.includes('Mystery'));
-      while (crimeMovies.length < 8) {
-        crimeMovies.push(...crimeMovies.slice(0, 8 - crimeMovies.length));
-      }
-      return crimeMovies.slice(0, 8);
-    })(),
-  },
-  {
-    id: 'action',
-    title: 'Action & Adventure',
-    movies: (() => {
-      const actionMovies = movies.filter(movie => movie.genre.includes('Action') || movie.genre.includes('Adventure'));
-      while (actionMovies.length < 8) {
-        actionMovies.push(...actionMovies.slice(0, 8 - actionMovies.length));
-      }
-      return actionMovies.slice(0, 8);
-    })(),
-  },
+    }
+    )
+  }
 ];
 
 export const featuredMovie = movies.find(movie => movie.isFeatured) || movies[0];
