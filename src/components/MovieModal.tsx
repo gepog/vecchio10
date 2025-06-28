@@ -28,7 +28,7 @@ export const MovieModal: React.FC<MovieModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 bg-[#081932]/80 z-40 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-[#081932]/80 z-30 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div 
