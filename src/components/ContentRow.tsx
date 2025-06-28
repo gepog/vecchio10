@@ -49,12 +49,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
 
   return (
     <div className="px-4 md:px-8 mb-8">
-      <h2 
-        className="text-white text-xl md:text-2xl font-semibold mb-4"
-        data-carousel-title={title}
-      >
-        {title}
-      </h2>
+      <h2 className="text-white text-xl md:text-2xl font-semibold mb-4">{title}</h2>
       
       <div className="relative group">
         {canScrollLeft && (
