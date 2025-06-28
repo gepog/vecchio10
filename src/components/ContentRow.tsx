@@ -145,8 +145,8 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                           isMyListRow 
                             ? 'bg-[#ddb870]/80 text-[#081932] hover:bg-[#ddb870]' 
                             : isInMyList
-                              ? 'bg-[#0f2f5f]/80 text-white hover:bg-[#ddb870] hover:text-[#081932]'
-                              : 'bg-[#0f2f5f]/80 text-white hover:bg-[#ebdcb5] hover:text-[#081932]'
+                              ? 'bg-[#ddb870]/80 text-[#081932] hover:bg-[#ddb870]'
+                              : 'bg-[#0f2f5f]/80 text-white hover:bg-[#ddb870] hover:text-[#081932]'
                         }`}
                       >
                         {isMyListRow ? (
