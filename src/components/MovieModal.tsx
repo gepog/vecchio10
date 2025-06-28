@@ -106,8 +106,8 @@ export const MovieModal: React.FC<MovieModalProps> = ({
                 onClick={() => onLike(movie)}
                 className={`flex items-center space-x-2 transition-colors ${
                   isLiked 
-                    ? 'text-[#ebdcb5]' 
-                    : 'text-white hover:text-[#ebdcb5]'
+                    ? 'text-[#ddb870]' 
+                    : 'text-white hover:text-[#ddb870]'
                 }`}
               >
                 <ThumbsUp size={20} />
