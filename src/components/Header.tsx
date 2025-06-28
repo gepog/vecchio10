@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
     if (popularElement) {
       popularElement.scrollIntoView({ 
         behavior: 'smooth',
-        block: 'start'
+        block: 'center'
       });
     }
   };
