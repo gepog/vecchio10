@@ -78,7 +78,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 key={item}
                 onClick={item === 'My List' ? handleMyListClick : undefined}
-                className={`text-white hover:text-gray-300 transition-colors text-sm ${
+                className={`text-white hover:text-gray-300 transition-colors text-lg px-4 py-2 ${
                   index === 0 ? 'font-semibold' : ''
                 }`}
               >
