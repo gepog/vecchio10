@@ -92,22 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
       }
     }
   };
-      myListElement.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
 
-  const handlePopularClick = () => {
-    const popularElement = document.getElementById('most-liked-section');
-    if (popularElement) {
-      popularElement.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
   const navItems = ['Home', 'Popular', 'My List'];
 
   return (
