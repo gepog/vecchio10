@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Play, Plus, Info, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Plus, Info, X, Heart } from 'lucide-react';
 import { Movie } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
@@ -112,7 +112,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({
                     <div className="flex items-center space-x-2 mb-3">
                       {movie.likes && (
                         <div className="flex items-center space-x-1">
-                          <span className="text-xs" style={{ color: '#ebdcb5' }}>❤</span>
+                          <Heart size={12} className="text-[#ebdcb5]" fill="currentColor" />
                           <span className="text-white/70 text-xs">{movie.likes}</span>
                         </div>
                       )}
