@@ -42,7 +42,7 @@ function App() {
   const handleSearch = (query: string) => {
     setSearchQuery(query);
     if (query.trim()) {
-      const results = movies.filter(movie =>
+      const results = allCarouselMovies.filter(movie =>
         movie.title.toLowerCase().includes(query.toLowerCase()) ||
         movie.description.toLowerCase().includes(query.toLowerCase()) ||
         movie.genre.some(g => g.toLowerCase().includes(query.toLowerCase()))
@@ -184,6 +184,21 @@ function App() {
   const finalContentRows = allMyListMovies.length > 0 
     ? [{ id: 'mylist', title: 'My List', movies: allMyListMovies }, ...finalUpdatedContentRows]
     : finalUpdatedContentRows;
+
+  // Get all movies currently displayed in carousels for search
+  const allCarouselMovies: Movie[] = [];
+  const seenIds = new Set<string>();
+  
+  finalContentRows.forEach(row => {
+    if (Array.isArray(row.movies)) {
+      row.movies.forEach(movie => {
+        if (!seenIds.has(movie.id)) {
+          seenIds.add(movie.id);
+          allCarouselMovies.push(movie);
+        }
+      });
+    }
+  });
 
   return (
     <div className="bg-[#081932] min-h-screen">
