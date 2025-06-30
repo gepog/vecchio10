@@ -108,8 +108,8 @@ export const Header: React.FC<HeaderProps> = ({
     setIsSearchOpen(false);
     setShowSuggestions(false);
     
-    // Refresh the page
-    window.location.reload();
+    // Scroll to top of page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navItems = ['Home', 'Popular', 'My List'];
