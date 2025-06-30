@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Bell, ChevronDown, User } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { Movie } from '../types';
 
 interface HeaderProps {
   onSearch: (query: string) => void;
-  onProfileClick: () => void;
-  onNotificationClick: () => void;
   onLogoClick: () => void;
   isScrolled: boolean;
   searchSuggestions?: Movie[];
@@ -14,8 +12,6 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ 
   onSearch, 
-  onProfileClick, 
-  onNotificationClick,
   onLogoClick,
   isScrolled,
   searchSuggestions = [],
@@ -209,24 +205,6 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             )}
           </div>
-
-          <button 
-            onClick={onNotificationClick}
-            className="text-white hover:text-gray-300 transition-colors p-2 relative"
-          >
-            <Bell size={20} />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#ddb870] rounded-full"></div>
-          </button>
-
-          <button
-            onClick={onProfileClick}
-            className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors"
-          >
-            <div className="w-8 h-8 bg-[#ddb870] rounded flex items-center justify-center">
-              <User size={16} />
-            </div>
-            <ChevronDown size={16} />
-          </button>
         </div>
       </div>
     </header>

@@ -5,11 +5,6 @@ import { ContentRow } from './components/ContentRow';
 import { VideoPlayer } from './components/VideoPlayer';
 import { MovieModal } from './components/MovieModal';
 import { SearchResults } from './components/SearchResults';
-import { ProfileDropdown } from './components/ProfileDropdown';
-import { NotificationDropdown } from './components/NotificationDropdown';
-import { SettingsModal } from './components/SettingsModal';
-import { HelpModal } from './components/HelpModal';
-import { LogoutModal } from './components/LogoutModal';
 import { featuredMovie, contentRows, movies, getMostLikedMovies } from './data/movies';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { Movie } from './types';
@@ -20,11 +15,6 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<Movie[]>([]);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-  const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
-  const [showSettingsModal, setShowSettingsModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
-  const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [myList, setMyList] = useLocalStorage<string[]>('project-mylist', []);
   const [searchSuggestions, setSearchSuggestions] = useState<Movie[]>([]);
   const [movieLikes, setMovieLikes] = useLocalStorage<Record<string, number>>('project-likes', {});
@@ -75,30 +65,10 @@ function App() {
     setSelectedMovie(movie);
   };
 
-  const handleSignOut = () => {
-    setShowLogoutModal(true);
-  };
-
-  const handleConfirmLogout = () => {
-    setShowLogoutModal(false);
-    // In a real app, this would clear auth tokens and redirect to login
-    console.log('Signing out...');
-  };
-
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setSearchQuery('');
     setSearchResults([]);
-  };
-
-  const handleNotificationClick = () => {
-    setShowNotificationDropdown(!showNotificationDropdown);
-    setShowProfileDropdown(false);
-  };
-
-  const handleProfileClick = () => {
-    setShowProfileDropdown(!showProfileDropdown);
-    setShowNotificationDropdown(false);
   };
 
   const handleLike = (movie: Movie) => {
@@ -204,41 +174,10 @@ function App() {
     <div className="bg-[#081932] min-h-screen">
       <Header
         onSearch={handleSearch}
-        onProfileClick={handleProfileClick}
-        onNotificationClick={handleNotificationClick}
         onLogoClick={handleLogoClick}
         isScrolled={isScrolled}
         searchSuggestions={searchSuggestions}
         onMovieSelect={handleMovieSelect}
-      />
-
-      <ProfileDropdown
-        isOpen={showProfileDropdown}
-        onClose={() => setShowProfileDropdown(false)}
-        onSignOut={handleSignOut}
-        onSettings={() => setShowSettingsModal(true)}
-        onHelp={() => setShowHelpModal(true)}
-      />
-
-      <NotificationDropdown
-        isOpen={showNotificationDropdown}
-        onClose={() => setShowNotificationDropdown(false)}
-      />
-
-      <SettingsModal
-        isOpen={showSettingsModal}
-        onClose={() => setShowSettingsModal(false)}
-      />
-
-      <HelpModal
-        isOpen={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
-      />
-
-      <LogoutModal
-        isOpen={showLogoutModal}
-        onClose={() => setShowLogoutModal(false)}
-        onConfirmLogout={handleConfirmLogout}
       />
 
       {searchQuery ? (
